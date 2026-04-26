@@ -1,0 +1,6 @@
+{
+  "name": "Salam AI",
+  "description": "Gamified Personal Finance Manager - The Feloos Master",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}

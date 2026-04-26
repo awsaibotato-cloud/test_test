@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-game-bg: #0b0e14;
+  --color-game-card: #151a24;
+  --color-game-border: #2a3341;
+}
+
+body {
+  @apply bg-game-bg text-slate-100 font-sans antialiased;
+}
+
+.game-card {
+  @apply bg-game-card border border-game-border rounded-xl shadow-2xl;
+}
+
+.hp-bar-bg {
+  @apply bg-slate-800 rounded-full h-3 overflow-hidden border border-slate-700 shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)];
+}
+
+.hp-bar-fill {
+  @apply h-full transition-all duration-500 ease-out rounded-full;
+}
+
+.glow-emerald { box-shadow: 0 0 15px rgba(52, 211, 153, 0.5); }
+.glow-indigo { box-shadow: 0 0 15px rgba(129, 140, 248, 0.5); }
+.glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.5); }
+
+/* Custom Markdown styling */
+.markdown-body p { @apply mb-1; }
+.markdown-body blockquote { @apply border-r-4 border-yellow-500 pr-4 italic text-slate-400 my-2 bg-slate-800/30 py-1 px-4; }
+.markdown-body code { @apply bg-slate-900 px-1.5 py-0.5 rounded font-mono text-xs text-yellow-400 border border-slate-700; }
+
+.hud-gradient {
+  background: linear-gradient(180deg, rgba(21, 26, 36, 1) 0%, rgba(21, 26, 36, 0.8) 100%);
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3341;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a455a;
+}
+
